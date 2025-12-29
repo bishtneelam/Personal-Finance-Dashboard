@@ -1,5 +1,5 @@
 import { Car, FileText, Heart, Home, ShoppingBag, Utensils, GraduationCap, PiggyBank, MoreHorizontal } from "lucide-react";
-import { COLORS } from "../styles/Colors";
+import { COLORS } from "../features/onboarding/styles/Colors";
 export const CATEGORIES = [
     { id: 'rent', name: 'Rent/EMI/Loan', icon: Home, color: COLORS.blue },
     { id: 'needs', name: 'Basic Needs', icon: ShoppingBag, color: COLORS.green },
