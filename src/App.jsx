@@ -1,9 +1,9 @@
-import './App.css'
+import OnboardingPage from './features/onboarding/OnboardingPage'
 
 function App() {
   return(
     <div>
-      <h1>Personal Finance Dashboard</h1>
+      <OnboardingPage/>
     </div>
   )
 }
