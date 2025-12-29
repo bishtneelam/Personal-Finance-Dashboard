@@ -1,6 +1,7 @@
 import { InputField } from './InputField';
 import styles from '../styles/Onboarding.module.css';
 import { CATEGORIES } from '../constants/categories';
+
 export function StepCategoryAllocation(
   { formData, 
     onUpdate,
@@ -23,10 +24,6 @@ export function StepCategoryAllocation(
   return (
     <div>
       <h2 className={styles.stepTitle}>Category Budget Allocation</h2>
-      <div className={styles.budgetTile}>
-        <span>Monthly Budget:</span>
-        <span>{formData.monthlyBudget}</span>
-      </div>
       
       <div className={styles.categoryContainer}>
         {CATEGORIES.map((category) => {
@@ -53,6 +50,7 @@ export function StepCategoryAllocation(
         })}
       </div>
 
+      {/* Budget summary with all info */}
       <div className={styles.budgetSummary}>
         <div>
           <span>Total Budget</span>
