@@ -118,3 +118,59 @@
     max-height: 450px;
     padding: 2px
 }
+.formContainer {
+
+}
+.formLabel {
+    display: block;
+    color: #374151;
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+.dateInputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.dateIcon {
+    position: absolute;
+    color: #6b7280;
+    pointer-events: none;
+    left: 16px;
+}
+
+.formInput,
+.textarea {
+    width: 100%;
+    padding: 1rem;
+    border-radius: .5rem;
+    border: 1px solid #e5e6ea;
+}
+.date {
+    padding-left: 48px;
+}
+.amountInput {
+    font-size: 1.4rem;
+}
+.descriptionInput{
+    font-size: .9rem;
+}
+.submitCta {
+    display: flex;
+    flex: 1;
+    justify-self: stretch;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: .5rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.debitCta {
+    background-color: #ef4345;
+}
+.creditCta {
+    background-color: #0bb980;
+}
