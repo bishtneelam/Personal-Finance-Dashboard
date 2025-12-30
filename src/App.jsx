@@ -1,9 +1,11 @@
-import OnboardingPage from './features/onboarding/OnboardingPage'
+import AddTransaction from './features/addTransaction/AddTransaction';
+import OnboardingPage from './features/onboarding/OnboardingPage';
 
 function App() {
   return(
     <div>
-      <OnboardingPage/>
+      {/* <OnboardingPage/> */}
+      <AddTransaction />
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { CATEGORIES } from '../constants/categories';
+import { CATEGORIES } from '../../../data/categories';
 export const useOnboardingViewModel = () => {
     const [step, setStep] = useState(1);
     const [formData, setFormData] = useState({
