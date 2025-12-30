@@ -1,11 +1,14 @@
 import { useAddTransactionController } from './hooks/useAddTransactionController';
 import styles from './styles/AddTransaction.module.css';
+import { CategorySelector } from './ui/CategorySelector';
 import { TransactionTypeSelector } from './ui/TransactionTypeSelector';
 
 export default function AddTransaction() {
     const {
         transactionType,
-        setTransactionType
+        selectedCategory,
+        setTransactionType,
+        setSelectedCategory,
     } = useAddTransactionController();
     return (
         <div className={styles.container}>
@@ -16,6 +19,13 @@ export default function AddTransaction() {
                 <section className={styles.section}>
                     <TransactionTypeSelector transactionType={transactionType} setTransactionType={setTransactionType} />
                 </section>
+
+                {
+                    transactionType === "debit" &&
+                    <section className={styles.section}>
+                        <CategorySelector selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
+                    </section>
+                }
             </div>
         </div>
     )
