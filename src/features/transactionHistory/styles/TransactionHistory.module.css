@@ -16,7 +16,7 @@
 }
 .sectionHeader {
     margin-bottom: 12px;
-    color: '#1f2937',
+    color: #1f2937,
 }
 .subtitle {
     color: #6b7280;
@@ -76,4 +76,48 @@
 }
 .debitText {
     color: #ef4345
+}
+.dateHeader {
+    margin: 1.5rem 0;
+    font-size: 18px;
+    color: #6b7280;
+    font-weight: 600;
+}
+.transactionContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    gap:1.5rem;
+    border-radius: 1rem;
+    background-color: #f9fafb;
+    border: 1px solid #f3f4f6;
+    margin-bottom: .8rem;
+}
+.icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.iconContainer {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+.description {
+    font-weight: 700;
+}
+.categoryName {
+    color: #6b7280;
+    font-size: 14px;
+}
+.amountText {
+    font-weight: 700;
+}
+.transactionHeight {
+    max-height: 600px;
 }

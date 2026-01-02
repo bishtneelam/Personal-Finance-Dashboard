@@ -1,6 +1,6 @@
 
 // Demo transaction data
-const DEMO_TRANSACTIONS = [
+export const DEMO_TRANSACTIONS = [
   {
     id: '1',
     type: 'credit',
@@ -62,7 +62,7 @@ const DEMO_TRANSACTIONS = [
     type: 'debit',
     amount: 3200,
     description: 'Medical Checkup',
-    date: '2024-12-22',
+    date: '2024-12-23',
     category: 'health'
   },
   {
@@ -78,7 +78,7 @@ const DEMO_TRANSACTIONS = [
     type: 'debit',
     amount: 10000,
     description: 'Mutual Fund Investment',
-    date: '2024-12-15',
+    date: '2024-12-20',
     category: 'savings'
   }
 ];
