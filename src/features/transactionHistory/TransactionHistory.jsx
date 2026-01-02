@@ -5,6 +5,7 @@ import '../../index.css';
 import { DateHeader } from './ui/DateHeader';
 import { SummaryCard } from './ui/SummaryCard';
 import { TransactionCard } from './ui/TransactionCard';
+import { SearchFilter } from './ui/SearchFilter';
 export default function TransactionHistory() {
     const { groupedData} = useTransactionHistory();
     return(
@@ -16,6 +17,9 @@ export default function TransactionHistory() {
                 <div className={styles.sections}>
                     <SummaryCard summaryData={SUMMARYDATA} />
                 </div>
+
+                {/* Search & Filter */}
+                <SearchFilter />
 
                 <div className={`${styles.sections} ${styles.transactionHeight} scrollable`}>
                     {

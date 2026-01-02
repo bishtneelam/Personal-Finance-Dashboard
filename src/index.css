@@ -3,6 +3,9 @@
 *::after {
   box-sizing: border-box;
 }
+:root {
+  --control-height: 48px;
+}
 * {
   margin: 0;
   padding: 0;
