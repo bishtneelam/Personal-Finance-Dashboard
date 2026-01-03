@@ -1,6 +1,6 @@
 import { InputField } from './InputField';
 import styles from '../styles/Onboarding.module.css';
-import { CATEGORIES } from '../constants/categories';
+import { CATEGORIES } from '../../../data/categories';
 
 export function StepCategoryAllocation(
   { formData, 

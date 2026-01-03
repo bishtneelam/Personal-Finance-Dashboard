@@ -1,5 +1,4 @@
 export function StepActions({ onBack, onNext, showBack, nextLabel = 'Next', disabled=false }) {
-  console.log(disabled)
   const buttonContainer = {
     display: 'flex',
     gap: '15px',

@@ -1,0 +1,176 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    padding: 2.5rem 1.5rem;
+}
+.card {
+    max-width: 600px;
+    width: 100%;
+    border-radius: 1rem;
+    background-color: #fff;
+    padding: 2rem;
+}
+.header {
+    text-align: center;
+    color: #1f2937;
+    margin-bottom: .5rem;
+}
+.subtitle {
+    text-align: center;
+    color: '#6b7280';
+    font-size: .8rem;
+    margin-bottom: 2rem;
+}
+.section {
+    margin-bottom: 2rem;
+}
+.sectionLabel {
+    display: block;
+    color: #374151;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+.typeSelector {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .8rem;
+}
+.typeButton {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    padding: 1.5rem;
+    border: 2px solid #e5e7eb;
+    border-radius: .6rem;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: '16px';
+}
+.typeContainer {
+    display: flex;
+    gap: .8rem;
+}
+.typeText {
+    text-align: left;
+}
+.typeTitle {
+    font-weight: 600;
+}
+.typeSubtitle {
+    font-size: 13px;
+    opacity: 0.8
+}
+.typeButtonActive {
+    border-width: 2px;
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
+}
+.typeButtonCredit {
+    border-color: #10b981;
+    background-color: #ecfdf5;
+    color: #047857
+}
+.typeButtonDebit {
+    border-color: #ef4444;
+    background-color: #fef2f2;
+    color: #b91c1c
+}
+.categoryGrid {
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    gap: 1rem;
+}
+
+.categoryButton {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    border: 1px solid #e5e7eb;
+    background-color: #f9fafb;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.categoryIcon {
+    border-radius: .5rem;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.categoryButtonActive {
+    border-width: 2px;
+    transform: scale(1.02);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.required {
+    color: #ef4444;
+}
+.categoryContainer {
+    max-height: 450px;
+    padding: 2px
+}
+.formContainer {
+
+}
+.formLabel {
+    display: block;
+    color: #374151;
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+.dateInputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.dateIcon {
+    position: absolute;
+    color: #6b7280;
+    pointer-events: none;
+    left: 16px;
+}
+
+.formInput,
+.textarea {
+    width: 100%;
+    padding: 1rem;
+    border-radius: .5rem;
+    border: 1px solid #e5e6ea;
+}
+.date {
+    padding-left: 48px;
+}
+.amountInput {
+    font-size: 1.4rem;
+}
+.descriptionInput{
+    font-size: .9rem;
+}
+.submitCta {
+    display: flex;
+    flex: 1;
+    justify-self: stretch;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: .5rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.debitCta {
+    background-color: #ef4345;
+}
+.creditCta {
+    background-color: #0bb980;
+}
