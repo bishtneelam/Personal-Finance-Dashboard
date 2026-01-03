@@ -1,22 +1,25 @@
-import { ArrowDownCircle, ArrowUpCircle, Filter, Search, X } from "lucide-react";
+import {
+  ArrowDownCircle,
+  ArrowUpCircle,
+  Filter,
+  Search,
+  X,
+} from "lucide-react";
 import styles from "../styles/TransactionHistory.module.css";
-import { useSearchFilter } from "../hooks/useSearchFilter";
 import { CATEGORIES } from "../../../data/categories";
-export function SearchFilter() {
-  const {
-    searchQuery,
-    showFilters,
-    filterType,
-    selectedCategories,
-    activeFiltersCount,
-    setSearchQuery,
-    handleFilterClick,
-    setFilterType,
-    toggleCategories,
-    clearCategories,
-    clearAllFilters,
-  } = useSearchFilter();
-  console.log("Active", activeFiltersCount)
+export function SearchFilter({
+  searchQuery,
+  showFilters,
+  filterType,
+  selectedCategories,
+  activeFiltersCount,
+  setSearchQuery,
+  handleFilterClick,
+  setFilterType,
+  toggleCategories,
+  clearCategories,
+  clearAllFilters,
+}) {
   return (
     <>
       <div className={styles.searchContainer}>
@@ -38,6 +41,7 @@ export function SearchFilter() {
         >
           <Filter size={20} className={styles.filterIcon} />
           <span>Filters</span>
+          {activeFiltersCount > 0 && <span className={styles.filterBadge}>{activeFiltersCount}</span>}
         </button>
       </div>
 
@@ -125,10 +129,15 @@ export function SearchFilter() {
             })}
           </div>
 
-          {activeFiltersCount > 0 && <button className={styles.clearAllFilters} onClick={clearAllFilters}>
-            <X size={16} />
-            <span>{`Clear All Filters (${activeFiltersCount})`}</span>
-            </button>}
+          {activeFiltersCount > 0 && (
+            <button
+              className={styles.clearAllFilters}
+              onClick={clearAllFilters}
+            >
+              <X size={16} />
+              <span>{`Clear All Filters (${activeFiltersCount})`}</span>
+            </button>
+          )}
         </div>
       )}
     </>

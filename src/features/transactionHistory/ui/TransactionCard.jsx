@@ -8,7 +8,6 @@ export function TransactionCard({ transaction }) {
     amountText,
     amountColor,
   } = transaction;
-  console.log(transaction);
   const CategoryIcon = icon;
   return (
     <div className={styles.transactionContainer}>

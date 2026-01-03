@@ -6,8 +6,16 @@ import { DateHeader } from './ui/DateHeader';
 import { SummaryCard } from './ui/SummaryCard';
 import { TransactionCard } from './ui/TransactionCard';
 import { SearchFilter } from './ui/SearchFilter';
+import { useSearchFilter } from './hooks/useSearchFilter';
+import { DEMO_TRANSACTIONS } from './data/transactionData';
 export default function TransactionHistory() {
-    const { groupedData} = useTransactionHistory();
+    const searchFilter = useSearchFilter();
+    const { groupedData} = useTransactionHistory({
+        transactions: DEMO_TRANSACTIONS,
+        searchQuery: searchFilter.searchQuery,
+        filterType: searchFilter.filterType,
+        selectedCategories: searchFilter.selectedCategories,
+    });
     return(
         <div className={styles.container}>
             <div className={styles.card}>
@@ -19,7 +27,7 @@ export default function TransactionHistory() {
                 </div>
 
                 {/* Search & Filter */}
-                <SearchFilter />
+                <SearchFilter {...searchFilter}/>
 
                 <div className={`${styles.sections} ${styles.transactionHeight} scrollable`}>
                     {

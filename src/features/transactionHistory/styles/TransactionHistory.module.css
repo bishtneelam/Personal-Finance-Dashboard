@@ -256,3 +256,10 @@
     border-radius: 8px;
     background-color: #fff;
 }
+.filterBadge {
+    background-color: #667eea;
+    color: #fff;
+    padding: 2px 6px;
+    font-size: 12px;
+    border-radius: 4px;
+}

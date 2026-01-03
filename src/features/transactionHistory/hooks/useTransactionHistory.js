@@ -1,7 +1,6 @@
 import { useMemo } from "react";
 import { CATEGORIES } from "../../../data/categories";
 import { ArrowDownCircle, ArrowUpCircle } from "lucide-react";
-import { DEMO_TRANSACTIONS } from "../data/transactionData";
 
 const CREDIT_COLOR = "#10b981";
 const DEBIT_COLOR = "#ef4444";
@@ -50,16 +49,43 @@ function buildTransactionUI(tx) {
   };
 }
 
-export function useTransactionHistory(transactions = DEMO_TRANSACTIONS) {
+export function useTransactionHistory({
+  transactions,
+  searchQuery,
+  filterType,
+  selectedCategories,
+}) {
   const groupedData = useMemo(() => {
-    // first task --> sort transactions latest first
+    let result = [...transactions];
 
-    const sortedTransactions = [...transactions].sort(
+    // Search
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase();
+      result = result.filter((tx) =>
+        tx.description.toLowerCase().includes(query)
+      );
+    }
+
+    // filterType
+    if (filterType !== "all") {
+      result = result.filter((tx) => tx.type === filterType);
+    }
+
+    // Category
+    if (selectedCategories.length) {
+      result = result.filter(
+        (tx) => tx.category && selectedCategories.includes(tx.category)
+      );
+    }
+
+    //sort transactions latest
+
+    result.sort(
       (a, b) => new Date(b.date) - new Date(a.date)
     );
 
     // grouped + formatted display data
-    const groupedByDate = sortedTransactions.reduce((acc, tx) => {
+    const groupedByDate = result.reduce((acc, tx) => {
       if (!acc[tx.date]) {
         acc[tx.date] = {
           dateKey: tx.date,
@@ -73,7 +99,7 @@ export function useTransactionHistory(transactions = DEMO_TRANSACTIONS) {
 
     //convert objects -> array
     return Object.values(groupedByDate);
-  }, [transactions]);
+  }, [transactions, searchQuery, filterType, selectedCategories]);
 
   return {
     groupedData,
