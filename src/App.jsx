@@ -5,9 +5,9 @@ import TransactionHistory from './features/transactionHistory/TransactionHistory
 function App() {
   return(
     <div>
-      <OnboardingPage/>
+      {/* <OnboardingPage/> */}
       {/* <AddTransaction /> */}
-      {/* <TransactionHistory /> */}
+      <TransactionHistory />
     </div>
   )
 }

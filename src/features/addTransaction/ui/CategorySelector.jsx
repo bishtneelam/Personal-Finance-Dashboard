@@ -13,8 +13,8 @@ export function CategorySelector({ selectedCategory, setSelectedCategory }) {
                         <button
                             key={key}
                             className={[styles.categoryButton, category.id === selectedCategory && styles.categoryButtonActive].filter(Boolean).join(' ')}
-                            style={{ ...(category.id === selectedCategory && { borderColor: category.color, backgroundColor: `${category.color}15` }) }}
-                            onClick={() => setSelectedCategory(category.id)} >
+                            style={{ ...(key === selectedCategory && { borderColor: category.color, backgroundColor: `${category.color}15` }) }}
+                            onClick={() => setSelectedCategory(key)} >
                             <div className={[styles.categoryIcon]} style={{ backgroundColor: category.color }}>
                                 <CategoryIcon size={24} />
                             </div>
