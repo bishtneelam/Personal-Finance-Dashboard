@@ -7,11 +7,11 @@ export function CategorySelector({ selectedCategory, setSelectedCategory }) {
                 Category <span className={styles.required}>*</span>
             </label>
             <section className={styles.categoryGrid}>
-                {CATEGORIES.map((category) => {
+                {Object.entries(CATEGORIES).map(([key,category]) => {
                     const CategoryIcon = category.icon
                     return (
                         <button
-                            key={category.id}
+                            key={key}
                             className={[styles.categoryButton, category.id === selectedCategory && styles.categoryButtonActive].filter(Boolean).join(' ')}
                             style={{ ...(category.id === selectedCategory && { borderColor: category.color, backgroundColor: `${category.color}15` }) }}
                             onClick={() => setSelectedCategory(category.id)} >
