@@ -1,0 +1,19 @@
+.appLayout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+.sidebar {
+    background-color: #2563eb;
+    color: #fff;
+    padding: 1rem;
+}
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+}
+.pageContent {
+    flex: 1;
+}
