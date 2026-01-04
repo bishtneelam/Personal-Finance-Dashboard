@@ -1,4 +1,5 @@
 import styles from "../styles/FinanceDashboard.module.css";
+import { Header } from "./Header";
 export function FinanceDashboard({ children }) {
   return (
     <div className={styles.appLayout}>
@@ -6,7 +7,7 @@ export function FinanceDashboard({ children }) {
         Sidebar
       </aside>
       <div className={styles.mainContent}>
-        <header>header</header>
+        <Header />
         <main className={styles.pageContent}>{children}</main>
       </div>
     </div>

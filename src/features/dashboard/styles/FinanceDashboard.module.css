@@ -17,3 +17,37 @@
 .pageContent {
     flex: 1;
 }
+.headerContainer {
+    background-color: #fff;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+}
+.headerName {
+    margin-bottom: 8px;
+}
+.calendarIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #898f9a;
+    
+}
+.date {
+    display: flex;
+    align-items: center;
+    color: #898f9a;
+    gap: 12px;
+    font-size: 18px;
+}
+.currentBalance {
+    color: #868687;
+    font-size: 18px;
+}
+.headerAmount {
+    color: #16a34a;
+    font-size: 20px;
+    font-weight: bold;
+}
