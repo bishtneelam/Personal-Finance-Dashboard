@@ -6,39 +6,31 @@ export const useOnboardingViewModel = () => {
         name: '',
         email: '',
         monthlyBudget: '',
-        categories: CATEGORIES.reduce((acc, cat) => {
+        categories: Object.keys(CATEGORIES).reduce((acc, cat) => {
             acc[cat.id] = { amount: 0 };
             return acc;
         }, {})
     });
-    const isStep1Valid = useMemo(() => {
-        return (
-            formData.name.trim() !== '' &&
-            formData.email.trim() !== '' &&
-            /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
-        );
-    }, [formData.name, formData.email]);
-
-    const isStep2Valid = useMemo(() => {
-        const budget = Number(formData.monthlyBudget);
-        return budget > 0;
-    }, [formData.monthlyBudget]);
-
-    const totalAllocated = useMemo(() => {
-        return Object.values(formData.categories).reduce((sum, c) => sum + Number(c.amount), 0)
-    }, [formData.categories])
-
+    const name = formData.name.trim();
+    const email = formData.email.trim();
     const totalBudget = Number(formData.monthlyBudget || 0);
+    
+    const isStep1Valid =
+      name.length >= 3 &&
+      email !== "" &&
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-    const remainingAmount = useMemo(() => {
-        return totalBudget - totalAllocated;
-    }, [totalBudget, totalAllocated]);
+    const isStep2Valid = totalBudget > 0;
 
-    const allocationStatus = useMemo(() => {
-        if (remainingAmount === 0) return 'balanced';
-        if (remainingAmount > 0) return 'under';
-        return 'over';
-    }, [remainingAmount]);
+    const totalAllocated = Object.values(formData.categories).reduce((sum, c) => sum + Number(c.amount), 0)
+
+    const remainingAmount = totalBudget - totalAllocated;
+
+    const allocationStatus = 
+         (remainingAmount === 0) ? 'balanced':
+        (remainingAmount > 0) ? 'under':
+         'over';
+
 
     const isStep3Valid = useMemo(() => {
         return remainingAmount === 0;
@@ -69,6 +61,7 @@ export const useOnboardingViewModel = () => {
     const handleSubmit = () => {
         console.log('User Data:', formData);
         alert('Profile Complete! Check console for data.');
+        localStorage.setItem("onboardingCompleted", true)
     };
 
     return {

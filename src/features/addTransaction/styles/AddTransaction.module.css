@@ -17,6 +17,7 @@
     text-align: center;
     color: #1f2937;
     margin-bottom: .5rem;
+    font-size: 20px
 }
 .subtitle {
     text-align: center;
@@ -42,7 +43,7 @@
     display: flex;
     align-items: center;
     gap: .6rem;
-    padding: 1.5rem;
+    padding: .6rem;
     border: 2px solid #e5e7eb;
     border-radius: .6rem;
     background-color: #fff;
@@ -81,7 +82,6 @@
 }
 .categoryGrid {
     display: grid;
-    grid-template-columns: repeat(2,auto);
     gap: 1rem;
 }
 
@@ -89,9 +89,9 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 1rem;
+    padding: .6rem;
     border-radius: .5rem;
-    border: 1px solid #e5e7eb;
+    border: 2px solid #e5e7eb;
     background-color: #f9fafb;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -173,4 +173,20 @@
 }
 .creditCta {
     background-color: #0bb980;
+}
+
+@media (min-width: 768px) {
+    .categoryGrid {
+        grid-template-columns: repeat(2, auto)
+    }
+    .header {
+        font-size: 32px;
+    }
+
+    .typeButton {
+        padding: 1.5rem;
+    }
+    .categoryButton {
+        padding: 1rem;
+    }
 }
