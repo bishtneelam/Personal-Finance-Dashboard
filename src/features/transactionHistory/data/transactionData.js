@@ -30,7 +30,7 @@ export const DEMO_TRANSACTIONS = [
     type: 'debit',
     amount: 1200,
     description: 'Groceries - Weekly Shopping',
-    date: '2024-12-26',
+    date: '2024-12-27',
     category: 'needs'
   },
   {
@@ -38,7 +38,7 @@ export const DEMO_TRANSACTIONS = [
     type: 'debit',
     amount: 850,
     description: 'Dinner at Restaurant',
-    date: '2024-12-25',
+    date: '2024-12-27',
     category: 'food'
   },
   {
@@ -46,7 +46,7 @@ export const DEMO_TRANSACTIONS = [
     type: 'debit',
     amount: 500,
     description: 'Uber rides',
-    date: '2024-12-24',
+    date: '2024-12-27',
     category: 'transport'
   },
   {

@@ -1,11 +1,12 @@
-import { ArrowDownCircle, ArrowUpCircle } from "lucide-react";
+import { ArrowDownCircle, ArrowUpCircle, Wallet } from "lucide-react";
 
 export const SUMMARYDATA = [
   {
     id: 'balance',
     title: 'Current Balance',
     amount: 20250,
-    type: 'balance'
+    type: 'balance',
+    icon: Wallet
   },
   {
     id: 'credit',

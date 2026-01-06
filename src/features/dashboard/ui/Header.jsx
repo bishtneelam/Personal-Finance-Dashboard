@@ -20,8 +20,8 @@ export function Header() {
         </div>
       </div>
       <div className={styles.currentBalance}>
-        <p>Current Balance</p>
-        <p className={styles.headerAmount}>₹55000</p>
+        <p>Net Balance</p>
+        <p className={styles.headerAmount}>₹20250</p>
       </div>
     </header>
   );

@@ -19,11 +19,6 @@ export default function TransactionHistory() {
   return (
     <div className={styles.container}>
       <div className={styles.card}>
-        <div className={styles.headerContainer}>
-          <h1 className={styles.sectionHeader}>Transaction History</h1>
-          <p className={styles.subtitle}>View all your transactions</p>
-        </div>
-
         <div className={styles.sections}>
           <SummaryCard summaryData={SUMMARYDATA} />
         </div>
@@ -31,14 +26,16 @@ export default function TransactionHistory() {
         {/* Search & Filter */}
         <SearchFilter {...searchFilter} />
 
-        <div
-          className={`${styles.sections} ${styles.transactionHeight} scrollable`}
-        >
+        <div className={`${styles.sections} ${styles.transactionWrapper}`}>
           {groupedData.map((group) => (
-            <div key={group.dateKey}>
+            <div key={group.dateKey} >
               <DateHeader date={group.displayDate} />
-              {group.transactions.map((tx) => (
-                <TransactionCard key={tx.id} transaction={tx} />
+              {group.transactions.map((tx, index) => (
+                <TransactionCard
+                  key={tx.id}
+                  transaction={tx}
+                  showDivider={index !== group.transactions.length - 1}
+                />
               ))}
             </div>
           ))}
