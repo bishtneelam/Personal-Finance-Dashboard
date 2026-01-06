@@ -5,7 +5,7 @@
     padding: 2.5rem 1.5rem;
 }
 .card {
-    max-width: 600px;
+    max-width: 52rem;
     width: 100%;
     border-radius: 1rem;
     background-color: #fff;
@@ -19,7 +19,7 @@
 }
 .subtitle {
     text-align: center;
-    color: '#6b7280';
+    color: #6b7280;
     font-size: .8rem;
     margin-bottom: 2rem;
 }
@@ -47,7 +47,7 @@
     background-color: #fff;
     cursor: pointer;
     transition: all 0.2s ease;
-    font-size: '16px';
+    font-size: 16px;
 }
 .typeContainer {
     display: flex;
@@ -143,12 +143,13 @@
     padding: 1rem;
     border-radius: .5rem;
     border: 1px solid #e5e6ea;
+    font-size: 15px;
 }
 .date {
     padding-left: 48px;
 }
 .amountInput {
-    font-size: 1.4rem;
+    font-size: 1rem;
 }
 .descriptionInput{
     font-size: .9rem;
@@ -175,7 +176,7 @@
 
 @media (min-width: 768px) {
     .categoryGrid {
-        grid-template-columns: repeat(2, auto)
+        grid-template-columns: repeat(2, 1fr)
     }
     .header {
         font-size: 32px;
@@ -188,3 +189,110 @@
         padding: 1rem;
     }
 }
+.modalOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modalContent {
+  background: #fff;
+  width: 100%;
+  max-width: 520px;
+  max-height: 80vh;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  overflow-y: auto; /* ONLY modal scrolls */
+}
+.modalTitle {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.categoryField {
+  width: 100%;
+  padding: 1rem;
+  border-radius: .6rem;
+  border: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.categoryField:hover {
+  background-color: #f3f4f6;
+}
+
+.chevron {
+  font-size: 1.5rem;
+  color: #9ca3af;
+}
+.modalClose {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 0.6rem;
+  background-color: #f3f4f6;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.modalClose:hover {
+  background-color: #d5d7dc;
+}
+
+.modalClose:active {
+  transform: scale(0.98);
+}
+
+.modalClose:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
+}
+.disabledCta {
+    cursor: not-allowed;
+    opacity: .5;
+    box-shadow: none;
+}
+.toastContainer {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #47ae6a;
+    color: #fff;
+    padding: 1rem .75rem;
+    border-radius: 0.5rem;
+    animation: toastIn 0.2s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    font-weight: 600;
+}
+
+@keyframes toastIn {
+  from {
+    transform: translateY(-8px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.toastIcon {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
