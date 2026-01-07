@@ -1,0 +1,269 @@
+.container {
+    display: flex;
+    justify-content: center;
+    /* align-items: flex-start; */
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 2.5rem;
+    padding: 2.5rem;
+    border-radius: .8rem;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.avatarContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,
+            #2563eb 0%,
+            #3b82f6 100%);
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.35);
+}
+
+.header {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: #1f2937;
+}
+
+.required {
+    color: #ef4444;
+}
+
+.helperText {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.divider {
+    border-bottom: 1px solid #dddfe1;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.sectionTitle {
+    font-size: 18px;
+    color: #1e293b;
+    margin-bottom: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sectionTitle::before {
+    content: '';
+    width: 4px;
+    height: 20px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    border-radius: 2px;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroup.full-width {
+    grid-column: 1 / -1;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #475569;
+    margin-bottom: 8px;
+}
+
+input {
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: all 0.3s;
+    background: #f8fafc;
+}
+
+input:focus {
+    outline: none;
+    border-color: #10b981;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.fullWidth {
+    grid-column: 1 / -1;
+}
+
+.budgetInfo {
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+    border: 2px solid #86efac;
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 13px;
+    color: #166534;
+    margin-top: 10px;
+}
+
+.gridLayout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1.25rem;
+}
+
+.categoryRow {
+    background-color: #f9fafb;
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    border: 2px solid #e4e5e8;
+    transition: all 0.2s ease;
+}
+
+.categoryRow:hover {
+    background-color: #f3f4f6;
+    border-color: #e5e7eb;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.categoryLabel {
+    display: grid;
+    grid-template-columns: 40px .8fr 1fr;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.categoryLabel input {
+    text-align: right;
+}
+
+.categoryAmountContainer {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+}
+
+button {
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+}
+
+.buttonReset {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+.buttonReset:hover {
+    background: #e2e8f0;
+    color: #475569;
+}
+
+.buttonSave {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.buttonSave:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.5);
+}
+
+.budgetSummary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 2rem;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+    border-radius: 12px;
+}
+
+.summaryItem {
+    text-align: center;
+}
+
+.summaryLabel {
+    font-size: 12px;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.summaryValue {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.remaining {
+    color: #10b981;
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 40px 20px;
+    }
+
+    .card {
+        max-width: 740px;
+    }
+
+    .gridLayout {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .budgetSummary {
+        position: sticky;
+    }
+}

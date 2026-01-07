@@ -1,4 +1,4 @@
-import styles from "./styles/Onboarding.module.css"; // ← Must use 'from'
+import styles from "./styles/Onboarding.module.css";
 import { StepProgress } from "./ui/StepProgressBar";
 import { StepBasicInfo } from "./ui/StepBasicInfo";
 import { StepMonthlyBudget } from "./ui/StepMonthlyBudget";

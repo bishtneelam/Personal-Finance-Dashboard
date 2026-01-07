@@ -3,6 +3,7 @@ import AddTransaction from './features/addTransaction/AddTransaction';
 import { FinanceDashboard } from './features/dashboard/ui/FinanceDashboard';
 import OnboardingPage from './features/onboarding/OnboardingPage';
 import TransactionHistory from './features/transactionHistory/TransactionHistory';
+import { EditProfile } from './features/editProfile/EditProfile';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         <Route index element={<div>Dashboard Home</div>} />
         <Route path='/add-transaction' element={<AddTransaction />} />
         <Route path='/history' element={<TransactionHistory />} />
-        <Route path='edit' element={<OnboardingPage />} />
+        <Route path='edit' element={<EditProfile />} />
       </Route>
 
     </Routes>
