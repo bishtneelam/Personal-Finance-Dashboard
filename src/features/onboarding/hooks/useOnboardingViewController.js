@@ -1,6 +1,8 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { CATEGORIES } from '../../../data/categories';
+
 export const useOnboardingViewModel = () => {
+    // Start at step 1 (Personal Info)
     const [step, setStep] = useState(1);
     const [formData, setFormData] = useState({
         name: '',
@@ -11,6 +13,7 @@ export const useOnboardingViewModel = () => {
             return acc;
         }, {})
     });
+
     const name = formData.name.trim();
     const email = formData.email.trim();
     const totalBudget = Number(formData.monthlyBudget || 0);
@@ -31,7 +34,6 @@ export const useOnboardingViewModel = () => {
         (remainingAmount > 0) ? 'under':
          'over';
 
-
     const isStep3Valid = useMemo(() => {
         return remainingAmount === 0;
     }, [remainingAmount]);
@@ -46,22 +48,33 @@ export const useOnboardingViewModel = () => {
     const updateFormData = (updates) => {
         setFormData((prev) => ({ ...prev, ...updates }));
     };
-    const handleNext = () => {
+
+
+
+    const handleNext = (navigate) => {
         if (step < 3) {
             setStep(step + 1);
         } else {
-            handleSubmit();
+            handleSubmit(navigate);
         }
     };
 
     const handleBack = () => {
-        setStep(step - 1);
+        if (step > 1) {
+            setStep(step - 1);
+        }
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = (navigate) => {
         console.log('User Data:', formData);
-        alert('Profile Complete! Check console for data.');
-        localStorage.setItem("onboardingCompleted", true)
+        // Save to localStorage
+        localStorage.setItem("onboardingCompleted", "true");
+        localStorage.setItem("userData", JSON.stringify(formData));
+        
+        // Navigate to dashboard
+        if (navigate) {
+            navigate("/dashboard");
+        }
     };
 
     return {

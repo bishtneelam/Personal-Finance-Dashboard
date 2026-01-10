@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styles from "./styles/Onboarding.module.css";
 import { StepProgress } from "./ui/StepProgressBar";
 import { StepBasicInfo } from "./ui/StepBasicInfo";
@@ -5,9 +6,17 @@ import { StepMonthlyBudget } from "./ui/StepMonthlyBudget";
 import { StepCategoryAllocation } from "./ui/StepCategoryAllocation";
 import { StepActions } from "./ui/StepActions";
 import { useOnboardingViewModel } from "./hooks/useOnboardingViewController";
-import { User } from "lucide-react";
+import { User, Wallet, PieChart, Settings } from "lucide-react";
+
+// Step-specific icons and titles
+const STEP_CONFIG = {
+  1: { icon: User, title: "Let's get to know you" },
+  2: { icon: Wallet, title: "Set your budget" },
+  3: { icon: PieChart, title: "Allocate your funds" },
+};
 
 export default function OnboardingPage() {
+  const navigate = useNavigate();
   const {
     step,
     formData,
@@ -23,26 +32,27 @@ export default function OnboardingPage() {
   const isFirstTimeUser = !localStorage.getItem("onboardingCompleted");
   const mode = isFirstTimeUser ? "onboarding" : "edit";
 
+  // Get current step config
+  const currentConfig = STEP_CONFIG[step] || { icon: Settings, title: "Setup" };
+  const StepIcon = mode === "edit" ? Settings : currentConfig.icon;
+
   return (
-    <div className={styles.container}>
-      <div className={styles.card}>
+    <div className={`${styles.container} ${mode === "edit" ? styles.editMode : ""}`}>
+      <div className={`${styles.card} ${mode === "edit" ? styles.cardEditMode : ""}`}>
         <div className={styles.avatarContainer}>
           <div className={styles.avatar}>
-            <User size={48} color={"#fff"} />
+            <StepIcon size={36} color={"#fff"} strokeWidth={2} />
           </div>
         </div>
         <h1 className={styles.header}>
-          {mode === "onboarding" ? "Complete Your Profile" : "Edit Profile"}
+          {mode === "onboarding" ? currentConfig.title : "Edit Profile"}
         </h1>
         { mode === "edit" && <p className={styles.helperText} style={{ textAlign: "center", marginBottom: "1.5rem" }}>
           Update your personal information and budget settings
         </p>}
 
         {mode === "onboarding" && (
-          <>
-            <p className={styles.stepText}>Step {step} of 3</p>
-            <StepProgress currentStep={step} totalSteps={3} />
-          </>
+          <StepProgress currentStep={step} totalSteps={3} />
         )}
 
         {/* CONTENT */}
@@ -97,7 +107,7 @@ export default function OnboardingPage() {
         {mode === "onboarding" ? (
           <StepActions
             onBack={handleBack}
-            onNext={handleNext}
+            onNext={() => handleNext(navigate)}
             showBack={step > 1}
             nextLabel={step === 3 ? "Complete Setup" : "Next"}
             disabled={isNextDisabled}
