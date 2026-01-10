@@ -28,7 +28,7 @@ export function Sidebar({ activeView, setActiveView }) {
           }`}
           onClick={() => {
             setActiveView("dashboard");
-            navigate("/");
+            navigate("/dashboard");
           }}
         >
           <TrendingUp className={styles.navIcon} />
@@ -78,7 +78,10 @@ export function Sidebar({ activeView, setActiveView }) {
           className={`${styles.sidebarButton} ${
             activeView === "logout" ? styles.active : ""
           }`}
-          onClick={() => setActiveView("logout")}
+          onClick={() => {
+            setActiveView("logout");
+            navigate("/");
+          }}
         >
           <LogOut className={styles.navIcon} />
           Logout
