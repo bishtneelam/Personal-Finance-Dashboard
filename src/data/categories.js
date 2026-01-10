@@ -8,6 +8,18 @@ import {
   GraduationCap,
   PiggyBank,
   MoreHorizontal,
+  Zap,
+  Film,
+  ShoppingCart,
+  Plane,
+  Shield,
+  Repeat,
+  Scissors,
+  Gift,
+  Landmark,
+  Sparkles,
+  Droplets,
+  Palette,
 } from "lucide-react";
 import { COLORS } from "../features/onboarding/styles/Colors";
 export const CATEGORIES = {
@@ -35,7 +47,7 @@ export const CATEGORIES = {
     color: COLORS.indigo,
   },
   savings: {
-    name: "Savings & Investment",
+    name: "Future Fund",
     icon: PiggyBank,
     color: COLORS.emerald,
   },
@@ -44,4 +56,51 @@ export const CATEGORIES = {
     icon: MoreHorizontal,
     color: COLORS.gray,
   },
+  utilities: {
+    name: "Utilities",
+    icon: Zap,
+    color: COLORS.orange,
+  },
+  entertainment: {
+    name: "Entertainment",
+    icon: Film,
+    color: COLORS.violet,
+  },
+  shopping: {
+    name: "Shopping",
+    icon: ShoppingCart,
+    color: COLORS.teal,
+  },
+  travel: {
+    name: "Travel",
+    icon: Plane,
+    color: COLORS.cyan,
+  },
+  insurance: {
+    name: "Insurance",
+    icon: Shield,
+    color: COLORS.sky,
+  },
+  subscriptions: {
+    name: "Subscriptions",
+    icon: Repeat,
+    color: COLORS.fuchsia,
+  },
+  personalCare: {
+    name: "Personal Care",
+    icon: Palette,
+    color: COLORS.rose,
+  },
+  gifts: {
+    name: "Gifts & Donations",
+    icon: Gift,
+    color: COLORS.amber,
+  },
+  taxes: {
+    name: "Taxes",
+    icon: Landmark,
+    color: COLORS.slate,
+  },
+
+
 };
