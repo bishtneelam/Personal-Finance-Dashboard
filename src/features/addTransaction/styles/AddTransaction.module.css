@@ -190,8 +190,11 @@
     }
 }
 .modalOverlay {
-  position: absolute;
-  inset: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 280px; /* Offset by sidebar width to center within main content */
   background: rgba(0, 0, 0, 0.4);
   display: flex;
   justify-content: center;
@@ -263,24 +266,37 @@
     box-shadow: none;
 }
 .toastContainer {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
     background-color: #47ae6a;
     color: #fff;
-    padding: 1rem .75rem;
+    padding: 1rem 1.25rem;
     border-radius: 0.5rem;
-    animation: toastIn 0.2s ease-out;
+    animation: toastSlideUp 0.3s ease-out;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: .5rem;
     font-weight: 600;
+    z-index: 1001;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes toastIn {
   from {
     transform: translateY(-8px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toastSlideUp {
+  from {
+    transform: translateY(20px);
     opacity: 0;
   }
   to {
